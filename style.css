@@ -1,0 +1,230 @@
+/* RESET CSS */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:root{
+  /* Colors */
+  /* Primary */
+
+  --red:hsl(0, 78%, 62%);
+  --cyan:hsl(180, 62%, 55%);
+  --orange:hsl(34, 97%, 64%);
+  --blue:hsl(212, 86%, 64%);
+
+  /* Neutral */
+
+  --very-dark-blue:hsl(234, 12%, 34%);
+  --grayish-blue:hsl(229, 6%, 66%);
+  --very-light-gray:hsl(0, 0%, 98%);
+
+  /* Fonts */
+  --fnt200:200;
+  --fnt400:400;
+  --fnt600:600;
+}
+body{
+  background-color: var(--very-light-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", serif;
+  line-height: 150%;
+  height: 100svh;
+  width: 100vw;
+  & .container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 5rem 0;
+    & .container__head{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        width: 50%;
+        margin-bottom: 4rem;
+        & .container__head-top{
+          font-weight: var(--fnt200);
+          color: var(--grayish-blue);
+          font-size: 2.2rem;
+        }
+        & .container__head-mid{
+          font-size: 2.2rem;
+          color:var(--very-dark-blue) ;
+          margin: 1rem;
+        }
+        & .container__head-bottom{
+          color: var(--grayish-blue);
+        }
+    }
+  & .container__main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    & .container__main-card{
+      background-color:#fff;
+      width: 22rem;
+      height: 16rem;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow:0px 15px 30px -15px hsl(229, 6%, 66%);
+      position: relative;
+      & .container__main-card__head{
+        color: var(--very-dark-blue);
+        margin-bottom: 1rem;
+      }
+      & .container__main-card__paragraph{
+        color: var(--grayish-blue);
+      }
+      & .container__main-card__image{
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+      }
+    }
+   & .container__main-supervisor{
+    border-top: 5px solid var(--cyan);
+    grid-column: 1/1;
+    grid-row: 1/3;
+    align-self: center;
+   } 
+   & .container__main-karma{
+    border-top: 5px solid var(--orange);
+    grid-area: 2/2/3/4;
+   } 
+   & .container__main-calculator{
+    border-top: 5px solid var(--blue);
+    grid-area: 1/3/3/4;
+    align-self: center;
+   } 
+   & .container__main-team_builder{
+    border-top: 5px solid var(--red);
+    grid-area: 1/2/2/3;
+   } 
+  }
+  }
+  & .container__footer{
+    & .container__footer_paragraph{
+      font-size: 1.2rem;
+    }
+    & .container__footer_paragraph a{
+      color: rgb(165, 42, 42);
+      text-decoration: none;
+    }
+   
+  }
+}
+@media (max-width: 540px) {
+ 
+  .container__head {
+    width: 90% !important; 
+      & .container__head-top,
+      & .container__head-mid {
+    font-size: 1.6rem !important; 
+    }
+      & .container__head-bottom {
+    font-size: 1rem !important;
+    }
+  }
+
+  & .container__main {
+    display: flex !important; 
+    flex-direction: column; 
+    align-items: center; 
+     & .container__main-card {
+      max-width: 400px;
+     }
+  
+   & .container__main-card__paragraph{
+      font-size:0.82rem ;
+    }
+  }
+
+  .container__footer_paragraph {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+
+  
+
+  
+ 
+
+
+
+
+
