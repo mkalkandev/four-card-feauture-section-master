@@ -19,7 +19,7 @@ Contents
 
 # Project URL
 
-The project is published at: [Product preview card component](https://mkalkandev.github.io/four-card-feature-section-master/)
+The project is published at: [Four card Feature section master](https://mkalkandev.github.io/four-card-feauture-section-master/)
 
 # Features
 
